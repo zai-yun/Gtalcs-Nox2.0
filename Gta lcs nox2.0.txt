@@ -1,0 +1,2674 @@
+// This file was decompiled using LCSSCM.ini published on 2020-11-11
+{$CLEO .csa}
+
+thread 'NOX2' 
+get_label_addr 10@ = get_label_addr @NOX2_14145 
+get_func_addr_by_cstr_name 10@ = get_func_addr_by_cstr_name 10@ 
+get_label_addr 16@ = get_label_addr @NOX2_14165
+get_func_addr_by_cstr_name 16@ = get_func_addr_by_cstr_name 16@ 
+get_label_addr 17@ = get_label_addr @NOX2_14196
+get_func_addr_by_cstr_name 17@ = get_func_addr_by_cstr_name 17@ 
+wait 123 
+0@ = 1 
+1@ = 1 
+13@ = 0 
+14@ = 130 
+15@ = 259 
+6@ = 1 
+7@ = 1 
+01F5: set_max_wanted_level 6 
+9@ = 1 
+0336: set_player_fast_reload $537 set 1 
+0335: set_player_never_gets_tired $537 set 1 
+04DD: set_char_drowns_in_water $541 to 0 
+
+:NOX2_112
+wait 0 
+025B:   is_player_playing $537 
+jf @NOX2_112 
+gosub @NOX2_14049 
+if and
+03F3:   is_player_control_on $537 
+02A4:   is_player_stopped $537 
+80E5:   not is_player_in_any_car $537 
+jf @NOX2_112 
+get_touch_point_state 18@ = get_touch_point_state 7 mintime 0 
+get_touch_point_state 19@ = get_touch_point_state 9 mintime 0 
+if and
+  18@ == 1 
+  19@ == 1 
+jf @NOX2_112 
+01B9: set_player_control 0 to 0 
+5@ = 1 
+01C5: store_wanted_level 0 store_to 8@ 
+0390: load_all_models_now 
+0378: set_camera_behind_player 
+015F: restore_camera 
+
+:NOX2_208
+wait 0 
+gosub @NOX2_4689 
+gosub @NOX2_4821 
+0343: display_text 100.0 120.0 gxt 'LYX_1' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4840 
+0343: display_text 100.0 140.0 gxt 'LYX_2' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4859 
+0343: display_text 100.0 160.0 gxt 'LYX_3' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4878 
+0343: display_text 100.0 180.0 gxt 'LYX_4' 
+03F5: use_text_commands 0 
+get_touch_point_state 18@ = get_touch_point_state 9 mintime 0 
+get_touch_point_state 19@ = get_touch_point_state 7 mintime 0 
+if and
+  18@ == 0 
+  19@ == 0 
+jf @NOX2_208 
+
+:NOX2_374
+wait 0 
+gosub @NOX2_14049 
+get_touch_point_state 18@ = get_touch_point_state 9 mintime 0 
+get_touch_point_state 19@ = get_touch_point_state 7 mintime 0 
+if and
+  18@ == 0 
+  19@ == 0 
+jf @NOX2_1258 
+
+:NOX2_415
+gosub @NOX2_4689 
+gosub @NOX2_4821 
+0343: display_text 100.0 120.0 gxt 'LYX_1' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4840 
+0343: display_text 100.0 140.0 gxt 'LYX_2' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4859 
+0343: display_text 100.0 160.0 gxt 'LYX_3' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4878 
+0343: display_text 100.0 180.0 gxt 'LYX_4' 
+03F5: use_text_commands 0 
+gosub @NOX2_2213 
+gosub @NOX2_4606 
+gosub @NOX2_3340 
+gosub @NOX2_4394 
+gosub @NOX2_662 
+gosub @NOX2_4935 
+get_touch_point_state 18@ = get_touch_point_state 5 mintime 0 
+  18@ == 1 
+jf @NOX2_374 
+  1@ == 1 
+jf @NOX2_374 
+   not 0@ == 1 
+jf @NOX2_1397 
+   not 0@ == 2 
+jf @NOX2_1714 
+   not 0@ == 3 
+jf @NOX2_1933 
+jump @NOX2_374 
+
+:NOX2_662
+  0@ == 2 
+jf @NOX2_4933 
+  1@ == 1 
+jf @NOX2_4933 
+get_touch_point_state 18@ = get_touch_point_state 1 mintime 0 
+  18@ == 1 
+jf @NOX2_972 
+get_touch_point_state 18@ = get_touch_point_state 2 mintime 0 
+get_touch_point_state 19@ = get_touch_point_state 8 mintime 0 
+if and
+  18@ == 0 
+  19@ == 0 
+jf @NOX2_4933 
+get_touch_point_state 18@ = get_touch_point_state 4 mintime 0 
+  18@ == 1 
+jf @NOX2_800 
+80E4:   not is_char_in_any_car $541 
+jf @NOX2_4933 
+11@ += 1 
+  102 > 11@ 
+jf @NOX2_788 
+jump @NOX2_865 
+
+:NOX2_788
+11@ = 1 
+jump @NOX2_865 
+
+:NOX2_800
+get_touch_point_state 18@ = get_touch_point_state 6 mintime 0 
+  18@ == 1 
+jf @NOX2_4933 
+80E4:   not is_char_in_any_car $541 
+jf @NOX2_4933 
+11@ -= 1 
+   not 1 > 11@ 
+jf @NOX2_853 
+jump @NOX2_865 
+
+:NOX2_853
+11@ = 101 
+jump @NOX2_865 
+
+:NOX2_865
+  5@ == 2 
+jf @NOX2_4933 
+gosub @NOX2_4721 
+0343: display_text 80.0 265.0 gxt 'LYX_2D' 
+03F5: use_text_commands 0 
+gosub @NOX2_4772 
+045F: display_text_with_number 160.0 265.0 gxt 'LYX_2E' number 11@ 
+03F5: use_text_commands 0 
+gosub @NOX2_4721 
+045F: display_text_with_number 225.0 265.0 gxt 'LYX_2F' number 12@ 
+03F5: use_text_commands 0 
+022E: change_car_colour 4@ primary_to 11@ secondary_to 12@ 
+jump @NOX2_4933 
+
+:NOX2_972
+get_touch_point_state 18@ = get_touch_point_state 7 mintime 0 
+  18@ == 1 
+jf @NOX2_4933 
+get_touch_point_state 18@ = get_touch_point_state 2 mintime 0 
+get_touch_point_state 19@ = get_touch_point_state 8 mintime 0 
+if and
+  18@ == 0 
+  19@ == 0 
+jf @NOX2_4933 
+get_touch_point_state 18@ = get_touch_point_state 4 mintime 0 
+  18@ == 1 
+jf @NOX2_1193 
+80E4:   not is_char_in_any_car $541 
+jf @NOX2_4933 
+12@ += 1 
+  102 > 12@ 
+jf @NOX2_1074 
+jump @NOX2_1086 
+
+:NOX2_1074
+12@ = 1 
+jump @NOX2_1086 
+
+:NOX2_1086
+  5@ == 2 
+jf @NOX2_4933 
+gosub @NOX2_4721 
+0343: display_text 80.0 265.0 gxt 'LYX_2D' 
+03F5: use_text_commands 0 
+gosub @NOX2_4721 
+045F: display_text_with_number 160.0 265.0 gxt 'LYX_2E' number 11@ 
+03F5: use_text_commands 0 
+gosub @NOX2_4772 
+045F: display_text_with_number 225.0 265.0 gxt 'LYX_2F' number 12@ 
+03F5: use_text_commands 0 
+022E: change_car_colour 4@ primary_to 11@ secondary_to 12@ 
+jump @NOX2_4933 
+
+:NOX2_1193
+get_touch_point_state 18@ = get_touch_point_state 6 mintime 0 
+  18@ == 1 
+jf @NOX2_4933 
+80E4:   not is_char_in_any_car $541 
+jf @NOX2_4933 
+12@ -= 1 
+   not 1 > 12@ 
+jf @NOX2_1246 
+jump @NOX2_1086 
+
+:NOX2_1246
+12@ = 101 
+jump @NOX2_1086 
+
+:NOX2_1258
+get_touch_point_state 18@ = get_touch_point_state 9 mintime 0 
+get_touch_point_state 19@ = get_touch_point_state 7 mintime 0 
+if and
+  18@ == 1 
+  19@ == 1 
+jf @NOX2_415 
+01B9: set_player_control 0 to 1 
+gosub @NOX2_3225 
+gosub @NOX2_1351 
+
+:NOX2_1310
+wait 0 
+get_touch_point_state 18@ = get_touch_point_state 9 mintime 0 
+get_touch_point_state 19@ = get_touch_point_state 7 mintime 0 
+if and
+  18@ == 0 
+  19@ == 0 
+jf @NOX2_1310 
+jump @NOX2_112 
+
+:NOX2_1351
+024D:   has_model_loaded 13@ 
+jf @NOX2_1364 
+024E: mark_model_as_no_longer_needed 13@ 
+
+:NOX2_1364
+024D:   has_model_loaded 14@ 
+jf @NOX2_1377 
+024E: mark_model_as_no_longer_needed 14@ 
+
+:NOX2_1377
+024D:   has_model_loaded 15@ 
+jf @NOX2_4933 
+024E: mark_model_as_no_longer_needed 15@ 
+jump @NOX2_4933 
+
+:NOX2_1397
+   not 6@ == 1 
+jf @NOX2_1452 
+   not 6@ == 2 
+jf @NOX2_1519 
+   not 6@ == 3 
+jf @NOX2_1601 
+jump @NOX2_374 
+
+:NOX2_1440
+1@ = 2 
+jump @NOX2_374 
+
+:NOX2_1452
+80E4:   not is_char_in_any_car $541 
+jf @NOX2_374 
+82F7:   not is_char_model $541 model 13@ 
+jf @NOX2_1440 
+gosub @NOX2_2340 
+context_set_reg_value 0 value $541 
+context_call_func 10@ 
+context_get_reg_value 2@ = context_get_reg 0 
+context_call_func 16@ 
+context_set_reg_value 1 value 13@ 
+context_set_reg_value 0 value 2@ 
+context_call_func 17@ 
+024E: mark_model_as_no_longer_needed 13@ 
+jump @NOX2_1440 
+
+:NOX2_1519
+80E4:   not is_char_in_any_car $541 
+jf @NOX2_374 
+gosub @NOX2_2340 
+04C9: get_offset_from_char_in_world_coords $541 offset 1.5 0.0 0.0 store_to 1@ 2@ 3@ 
+02D3: get_ground_z_for_3d_coord 1@ 2@ 3@ store_to 3@ 
+009A: create_char 7 model 13@ at 1@ 2@ 3@ store_to 0@ 
+0177: get_char_heading $541 store_to 3@ 
+3@ += 180.0 
+0178: set_char_heading 0@ to 3@ 
+01C7: mark_char_as_no_longer_needed 0@ 
+0@ = 0 
+0@ = 1 
+024E: mark_model_as_no_longer_needed 13@ 
+jump @NOX2_1440 
+
+:NOX2_1601
+80E4:   not is_char_in_any_car $541 
+jf @NOX2_374 
+gosub @NOX2_2340 
+04C9: get_offset_from_char_in_world_coords $541 offset 1.5 0.0 0.0 store_to 1@ 2@ 3@ 
+02D3: get_ground_z_for_3d_coord 1@ 2@ 3@ store_to 3@ 
+009A: create_char 7 model 13@ at 1@ 2@ 3@ store_to 0@ 
+gosub @NOX2_13217 
+gosub @NOX2_2848 
+0177: get_char_heading $541 store_to 3@ 
+3@ += 180.0 
+0178: set_char_heading 0@ to 3@ 
+01B7: give_weapon_to_char 0@ weapon 1@ ammo 99999 
+024E: mark_model_as_no_longer_needed 15@ 
+024E: mark_model_as_no_longer_needed 13@ 
+01C7: mark_char_as_no_longer_needed 0@ 
+0@ = 0 
+0@ = 1 
+1@ = 2 
+jump @NOX2_1440 
+
+:NOX2_1714
+   not 7@ == 1 
+jf @NOX2_1757 
+   not 7@ == 2 
+jf @NOX2_1800 
+   not 7@ == 3 
+jf @NOX2_1853 
+jump @NOX2_374 
+
+:NOX2_1757
+020F: lock_car_doors 4@ mode 1 
+0229: set_car_health 4@ to 10000 
+02B1: set_car_proofs 4@ BP 1 FP 1 EP 1 CP 1 MP 1 
+01F1: set_car_heavy 4@ to 1 
+01C8: mark_car_as_no_longer_needed 4@ 
+4@ = 0 
+jump @NOX2_1907 
+
+:NOX2_1800
+020F: lock_car_doors 4@ mode 1 
+0229: set_car_health 4@ to 10000 
+02B1: set_car_proofs 4@ BP 1 FP 1 EP 1 CP 1 MP 1 
+01F1: set_car_heavy 4@ to 1 
+036E: put_player $537 in_car 4@ 
+04BF: set_car_forward_speed 4@ to 0.5 
+01C8: mark_car_as_no_longer_needed 4@ 
+4@ = 0 
+jump @NOX2_1907 
+
+:NOX2_1853
+020F: lock_car_doors 4@ mode 1 
+0229: set_car_health 4@ to 10000 
+02B1: set_car_proofs 4@ BP 1 FP 1 EP 1 CP 1 MP 1 
+01F1: set_car_heavy 4@ to 1 
+036E: put_player $537 in_car 4@ 
+04BF: set_car_forward_speed 4@ to 30.0 
+01C8: mark_car_as_no_longer_needed 4@ 
+4@ = 0 
+jump @NOX2_1907 
+
+:NOX2_1907
+01B9: set_player_control 0 to 1 
+gosub @NOX2_3225 
+gosub @NOX2_1351 
+jump @NOX2_1310 
+
+:NOX2_1933
+80E4:   not is_char_in_any_car $541 
+jf @NOX2_374 
+gosub @NOX2_13217 
+8495:   not has_player_got_weapon $537 weapon 1@ 
+jf @NOX2_1970 
+jump @NOX2_2102 
+
+:NOX2_1970
+if and
+   not 1@ == 1 
+   not 1@ == 2 
+   not 1@ == 3 
+   not 1@ == 4 
+   not 1@ == 5 
+   not 1@ == 6 
+jf @NOX2_2078 
+if and
+   not 1@ == 7 
+   not 1@ == 8 
+   not 1@ == 9 
+   not 1@ == 10 
+   not 1@ == 11 
+jf @NOX2_2078 
+0475: get_current_char_weapon $541 store_to 2@ 
+041E: get_ammo_in_player_weapon $537 weapon 3@ store_to 3@ 
+   not 2@ > 9999 
+jf @NOX2_2078 
+jump @NOX2_2102 
+
+:NOX2_2078
+82DC:   not is_current_player_weapon $537 weapon 1@ 
+jf @NOX2_1440 
+01BD: set_current_player_weapon $537 to 1@ 
+jump @NOX2_1440 
+
+:NOX2_2102
+gosub @NOX2_2848 
+01B7: give_weapon_to_char $541 weapon 1@ ammo 1 
+if and
+   not 1@ == 1 
+   not 1@ == 2 
+   not 1@ == 3 
+   not 1@ == 4 
+   not 1@ == 5 
+   not 1@ == 6 
+jf @NOX2_1440 
+if and
+   not 1@ == 7 
+   not 1@ == 8 
+   not 1@ == 9 
+   not 1@ == 10 
+   not 1@ == 11 
+jf @NOX2_1440 
+01B7: give_weapon_to_char $541 weapon 1@ ammo 99999 
+024E: mark_model_as_no_longer_needed 15@ 
+jump @NOX2_1440 
+
+:NOX2_2213
+  5@ == 1 
+jf @NOX2_4933 
+   not 0@ == 1 
+jf @NOX2_2268 
+   not 0@ == 2 
+jf @NOX2_2528 
+   not 0@ == 3 
+jf @NOX2_2793 
+jump @NOX2_4933 
+
+:NOX2_2268
+gosub @NOX2_2340 
+04C9: get_offset_from_char_in_world_coords $541 offset 1.5 0.0 0.0 store_to 1@ 2@ 3@ 
+02D3: get_ground_z_for_3d_coord 1@ 2@ 3@ store_to 3@ 
+009A: create_char 4 model 13@ at 1@ 2@ 3@ store_to 4@ 
+0177: get_char_heading $541 store_to 3@ 
+3@ += 180.0 
+0178: set_char_heading 4@ to 3@ 
+01F2: clear_char_threat_search 4@ 
+5@ = 2 
+1@ = 2 
+024E: mark_model_as_no_longer_needed 13@ 
+jump @NOX2_4933 
+
+:NOX2_2340
+024D:   has_model_loaded 13@ 
+jf @NOX2_2357 
+jump @NOX2_4933 
+
+:NOX2_2357
+024C: request_model 13@ 
+wait 0 
+gosub @NOX2_4689 
+gosub @NOX2_4821 
+0343: display_text 100.0 120.0 gxt 'LYX_1' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4840 
+0343: display_text 100.0 140.0 gxt 'LYX_2' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4859 
+0343: display_text 100.0 160.0 gxt 'LYX_3' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4878 
+0343: display_text 100.0 180.0 gxt 'LYX_4' 
+03F5: use_text_commands 0 
+gosub @NOX2_4772 
+0343: display_text 80.0 205.0 gxt 'LYX_0A' 
+03F5: use_text_commands 0 
+jump @NOX2_2340 
+
+:NOX2_2528
+gosub @NOX2_2605 
+04C9: get_offset_from_char_in_world_coords $541 offset 0.0 3.0 0.0 store_to 1@ 2@ 3@ 
+02D3: get_ground_z_for_3d_coord 1@ 2@ 3@ store_to 3@ 
+00A5: create_car 14@ at 1@ 2@ 3@ store_to 4@ 
+0177: get_char_heading $541 store_to 3@ 
+3@ += 90.0 
+020F: lock_car_doors 4@ mode 2 
+017A: set_car_heading 4@ to 3@ 
+03F8: get_car_colours 4@ store_to 11@ and 12@ 
+024E: mark_model_as_no_longer_needed 14@ 
+1@ = 2 
+5@ = 2 
+jump @NOX2_4933 
+
+:NOX2_2605
+024D:   has_model_loaded 14@ 
+jf @NOX2_2622 
+jump @NOX2_4933 
+
+:NOX2_2622
+wait 0 
+024C: request_model 14@ 
+gosub @NOX2_4689 
+gosub @NOX2_4821 
+0343: display_text 100.0 120.0 gxt 'LYX_1' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4840 
+0343: display_text 100.0 140.0 gxt 'LYX_2' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4859 
+0343: display_text 100.0 160.0 gxt 'LYX_3' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4878 
+0343: display_text 100.0 180.0 gxt 'LYX_4' 
+03F5: use_text_commands 0 
+gosub @NOX2_4772 
+0343: display_text 80.0 205.0 gxt 'LYX_0A' 
+03F5: use_text_commands 0 
+jump @NOX2_2605 
+
+:NOX2_2793
+gosub @NOX2_2848 
+04C9: get_offset_from_char_in_world_coords $541 offset 1.5 0.0 1.0 store_to 1@ 2@ 3@ 
+0330: create_pickup_with_ammo 15@ type 3 ammo 99999 at 1@ 2@ 3@ store_to 4@ 
+024E: mark_model_as_no_longer_needed 15@ 
+5@ = 2 
+1@ = 2 
+jump @NOX2_4933 
+
+:NOX2_2848
+   not 15@ == 290 
+jf @NOX2_3049 
+024D:   has_model_loaded 15@ 
+jf @NOX2_2878 
+jump @NOX2_4933 
+
+:NOX2_2878
+wait 0 
+024C: request_model 15@ 
+gosub @NOX2_4689 
+gosub @NOX2_4821 
+0343: display_text 100.0 120.0 gxt 'LYX_1' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4840 
+0343: display_text 100.0 140.0 gxt 'LYX_2' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4859 
+0343: display_text 100.0 160.0 gxt 'LYX_3' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4878 
+0343: display_text 100.0 180.0 gxt 'LYX_4' 
+03F5: use_text_commands 0 
+gosub @NOX2_4772 
+0343: display_text 80.0 205.0 gxt 'LYX_0A' 
+03F5: use_text_commands 0 
+jump @NOX2_2848 
+
+:NOX2_3049
+if and
+024D:   has_model_loaded 15@ 
+024D:   has_model_loaded 294 
+jf @NOX2_3075 
+jump @NOX2_4933 
+
+:NOX2_3075
+wait 0 
+024C: request_model 15@ 
+024C: request_model 294 
+gosub @NOX2_4689 
+gosub @NOX2_4821 
+0343: display_text 100.0 120.0 gxt 'LYX_1' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4840 
+0343: display_text 100.0 140.0 gxt 'LYX_2' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4859 
+0343: display_text 100.0 160.0 gxt 'LYX_3' 
+03F5: use_text_commands 0 
+gosub @NOX2_4689 
+gosub @NOX2_4878 
+0343: display_text 100.0 180.0 gxt 'LYX_4' 
+03F5: use_text_commands 0 
+jump @NOX2_2848 
+
+:NOX2_3225
+   not 0@ == 1 
+jf @NOX2_3268 
+   not 0@ == 2 
+jf @NOX2_3293 
+   not 0@ == 3 
+jf @NOX2_3318 
+jump @NOX2_4933 
+
+:NOX2_3268
+009B: delete_char 4@ 
+01C7: mark_char_as_no_longer_needed 4@ 
+5@ = 1 
+4@ = 0 
+024E: mark_model_as_no_longer_needed 13@ 
+jump @NOX2_4933 
+
+:NOX2_3293
+00A6: delete_car 4@ 
+01C8: mark_car_as_no_longer_needed 4@ 
+5@ = 1 
+4@ = 0 
+024E: mark_model_as_no_longer_needed 14@ 
+jump @NOX2_4933 
+
+:NOX2_3318
+021A: remove_pickup 4@ 
+4@ = 0 
+5@ = 1 
+024E: mark_model_as_no_longer_needed 15@ 
+jump @NOX2_4933 
+
+:NOX2_3340
+get_touch_point_state 18@ = get_touch_point_state 1 mintime 0 
+get_touch_point_state 19@ = get_touch_point_state 7 mintime 0 
+if and
+  18@ == 0 
+  19@ == 0 
+jf @NOX2_4933 
+  1@ == 1 
+jf @NOX2_4933 
+get_touch_point_state 18@ = get_touch_point_state 6 mintime 0 
+  18@ == 1 
+jf @NOX2_3444 
+gosub @NOX2_3225 
+0@ += 1 
+  5 > 0@ 
+jf @NOX2_3432 
+jump @NOX2_3505 
+
+:NOX2_3432
+0@ = 1 
+jump @NOX2_3505 
+
+:NOX2_3444
+get_touch_point_state 18@ = get_touch_point_state 4 mintime 0 
+  18@ == 1 
+jf @NOX2_3517 
+gosub @NOX2_3225 
+0@ -= 1 
+   not 1 > 0@ 
+jf @NOX2_3493 
+jump @NOX2_3505 
+
+:NOX2_3493
+0@ = 4 
+jump @NOX2_3505 
+
+:NOX2_3505
+1@ = 2 
+jump @NOX2_2213 
+
+:NOX2_3517
+get_touch_point_state 18@ = get_touch_point_state 8 mintime 0 
+  18@ == 1 
+jf @NOX2_3971 
+  1@ == 1 
+jf @NOX2_4933 
+   not 0@ == 1 
+jf @NOX2_3602 
+   not 0@ == 2 
+jf @NOX2_3711 
+   not 0@ == 3 
+jf @NOX2_3827 
+   not 0@ == 4 
+jf @NOX2_3917 
+jump @NOX2_4933 
+
+:NOX2_3602
+13@ += 1 
+   not 13@ == 8 
+jf @NOX2_3638 
+   not 13@ == 69 
+jf @NOX2_3650 
+jump @NOX2_3662 
+
+:NOX2_3638
+13@ = 9 
+jump @NOX2_3662 
+
+:NOX2_3650
+13@ = 79 
+jump @NOX2_3662 
+
+:NOX2_3662
+  97 > 13@ 
+jf @NOX2_3681 
+jump @NOX2_3692 
+
+:NOX2_3681
+13@ = 0 
+jump @NOX2_3692 
+
+:NOX2_3692
+gosub @NOX2_3225 
+1@ = 2 
+jump @NOX2_2213 
+
+:NOX2_3711
+14@ += 1 
+   not 14@ == 192 
+jf @NOX2_3749 
+   not 14@ == 197 
+jf @NOX2_3762 
+jump @NOX2_3775 
+
+:NOX2_3749
+14@ = 193 
+jump @NOX2_3775 
+
+:NOX2_3762
+14@ = 202 
+jump @NOX2_3775 
+
+:NOX2_3775
+  217 > 14@ 
+jf @NOX2_3795 
+jump @NOX2_3808 
+
+:NOX2_3795
+14@ = 130 
+jump @NOX2_3808 
+
+:NOX2_3808
+gosub @NOX2_3225 
+1@ = 2 
+jump @NOX2_2213 
+
+:NOX2_3827
+15@ += 1 
+   not 15@ == 273 
+jf @NOX2_3852 
+jump @NOX2_3865 
+
+:NOX2_3852
+15@ = 274 
+jump @NOX2_3865 
+
+:NOX2_3865
+  293 > 15@ 
+jf @NOX2_3885 
+jump @NOX2_3898 
+
+:NOX2_3885
+15@ = 259 
+jump @NOX2_3898 
+
+:NOX2_3898
+1@ = 2 
+gosub @NOX2_3225 
+jump @NOX2_2213 
+
+:NOX2_3917
+8@ += 1 
+  7 > 8@ 
+jf @NOX2_3941 
+jump @NOX2_3952 
+
+:NOX2_3941
+8@ = 0 
+jump @NOX2_3952 
+
+:NOX2_3952
+1@ = 2 
+01F5: set_max_wanted_level 8@ 
+0112: alter_wanted_level 0 to 8@ 
+jump @NOX2_4933 
+
+:NOX2_3971
+get_touch_point_state 18@ = get_touch_point_state 2 mintime 0 
+  18@ == 1 
+jf @NOX2_4933 
+   not 0@ == 1 
+jf @NOX2_4044 
+   not 0@ == 2 
+jf @NOX2_4153 
+   not 0@ == 3 
+jf @NOX2_4269 
+   not 0@ == 4 
+jf @NOX2_4359 
+jump @NOX2_4933 
+
+:NOX2_4044
+13@ -= 1 
+   not 13@ == 8 
+jf @NOX2_4080 
+   not 13@ == 78 
+jf @NOX2_4092 
+jump @NOX2_4104 
+
+:NOX2_4080
+13@ = 7 
+jump @NOX2_4104 
+
+:NOX2_4092
+13@ = 68 
+jump @NOX2_4104 
+
+:NOX2_4104
+   not 0 > 13@ 
+jf @NOX2_4122 
+jump @NOX2_4134 
+
+:NOX2_4122
+13@ = 96 
+jump @NOX2_4134 
+
+:NOX2_4134
+1@ = 2 
+gosub @NOX2_3225 
+jump @NOX2_2213 
+
+:NOX2_4153
+14@ -= 1 
+   not 14@ == 192 
+jf @NOX2_4191 
+   not 14@ == 201 
+jf @NOX2_4204 
+jump @NOX2_4217 
+
+:NOX2_4191
+14@ = 191 
+jump @NOX2_4217 
+
+:NOX2_4204
+14@ = 196 
+jump @NOX2_4217 
+
+:NOX2_4217
+   not 130 > 14@ 
+jf @NOX2_4237 
+jump @NOX2_4250 
+
+:NOX2_4237
+14@ = 216 
+jump @NOX2_4250 
+
+:NOX2_4250
+1@ = 2 
+gosub @NOX2_3225 
+jump @NOX2_2213 
+
+:NOX2_4269
+15@ -= 1 
+   not 15@ == 273 
+jf @NOX2_4294 
+jump @NOX2_4307 
+
+:NOX2_4294
+15@ = 272 
+jump @NOX2_4307 
+
+:NOX2_4307
+   not 259 > 15@ 
+jf @NOX2_4327 
+jump @NOX2_4340 
+
+:NOX2_4327
+15@ = 292 
+jump @NOX2_4340 
+
+:NOX2_4340
+1@ = 2 
+gosub @NOX2_3225 
+jump @NOX2_2213 
+
+:NOX2_4359
+8@ -= 1 
+   not 0 > 8@ 
+jf @NOX2_4382 
+jump @NOX2_3952 
+
+:NOX2_4382
+8@ = 6 
+jump @NOX2_3952 
+
+:NOX2_4394
+  1@ == 1 
+jf @NOX2_4933 
+get_touch_point_state 18@ = get_touch_point_state 9 mintime 0 
+  18@ == 1 
+jf @NOX2_4933 
+   not 0@ == 1 
+jf @NOX2_4491 
+   not 0@ == 2 
+jf @NOX2_4527 
+   not 0@ == 3 
+jf @NOX2_4933 
+   not 0@ == 4 
+jf @NOX2_4570 
+jump @NOX2_4933 
+
+:NOX2_4479
+1@ = 2 
+jump @NOX2_4933 
+
+:NOX2_4491
+6@ += 1 
+  4 > 6@ 
+jf @NOX2_4515 
+jump @NOX2_4479 
+
+:NOX2_4515
+6@ = 1 
+jump @NOX2_4479 
+
+:NOX2_4527
+7@ += 1 
+  4 > 7@ 
+jf @NOX2_4551 
+jump @NOX2_4479 
+
+:NOX2_4551
+7@ = 1 
+jump @NOX2_4479 
+jump @NOX2_4933 
+
+:NOX2_4570
+9@ += 1 
+  3 > 9@ 
+jf @NOX2_4594 
+jump @NOX2_4479 
+
+:NOX2_4594
+9@ = 1 
+jump @NOX2_4479 
+
+:NOX2_4606
+get_touch_point_state 18@ = get_touch_point_state 4 mintime 0 
+get_touch_point_state 19@ = get_touch_point_state 6 mintime 0 
+get_touch_point_state 20@ = get_touch_point_state 7 mintime 0 
+get_touch_point_state 21@ = get_touch_point_state 2 mintime 0 
+get_touch_point_state 22@ = get_touch_point_state 8 mintime 0 
+get_touch_point_state 23@ = get_touch_point_state 9 mintime 0 
+if and
+  18@ == 0 
+  19@ == 0 
+  20@ == 0 
+  21@ == 0 
+  22@ == 0 
+  23@ == 0 
+jf @NOX2_4933 
+1@ = 1 
+jump @NOX2_4933 
+
+:NOX2_4689
+0346: set_text_justify 1 
+03E9: set_text_right_justify 0 
+0348: set_text_wrapx 648.0 
+0347: set_text_centre 0 
+034A: set_text_background 0 
+0344: set_text_scale 1.0 2.0 
+jump @NOX2_4933 
+
+:NOX2_4721
+0346: set_text_justify 1 
+03E9: set_text_right_justify 0 
+0348: set_text_wrapx 648.0 
+0347: set_text_centre 0 
+034A: set_text_background 0 
+0344: set_text_scale 0.8 1.6 
+0345: set_text_colour 192 192 192 255 
+jump @NOX2_4933 
+
+:NOX2_4772
+0346: set_text_justify 1 
+03E9: set_text_right_justify 0 
+0348: set_text_wrapx 648.0 
+0347: set_text_centre 0 
+034A: set_text_background 0 
+0344: set_text_scale 0.8 1.6 
+0345: set_text_colour 255 0 255 255 
+jump @NOX2_4933 
+
+:NOX2_4821
+  0@ == 1 
+jf @NOX2_4897 
+jump @NOX2_4914 
+
+:NOX2_4840
+  0@ == 2 
+jf @NOX2_4897 
+jump @NOX2_4914 
+
+:NOX2_4859
+  0@ == 3 
+jf @NOX2_4897 
+jump @NOX2_4914 
+
+:NOX2_4878
+  0@ == 4 
+jf @NOX2_4897 
+jump @NOX2_4914 
+
+:NOX2_4897
+0345: set_text_colour 255 0 0 255 
+jump @NOX2_4933 
+
+:NOX2_4914
+0345: set_text_colour 255 255 0 255 
+jump @NOX2_4933 
+
+:NOX2_4933
+return 
+
+:NOX2_4935
+   not 0@ == 1 
+jf @NOX2_4990 
+   not 0@ == 2 
+jf @NOX2_5190 
+   not 0@ == 3 
+jf @NOX2_5518 
+   not 0@ == 4 
+jf @NOX2_5595 
+jump @NOX2_4933 
+
+:NOX2_4990
+gosub @NOX2_4721 
+045F: display_text_with_number 80.0 220.0 gxt 'LYX_0' number 13@ 
+03F5: use_text_commands 0 
+gosub @NOX2_4721 
+gosub @NOX2_5733 
+03F5: use_text_commands 0 
+gosub @NOX2_5048 
+jump @NOX2_4933 
+
+:NOX2_5048
+   not 6@ == 1 
+jf @NOX2_5091 
+   not 6@ == 2 
+jf @NOX2_5124 
+   not 6@ == 3 
+jf @NOX2_5157 
+jump @NOX2_4933 
+
+:NOX2_5091
+gosub @NOX2_4721 
+0343: display_text 80.0 250.0 gxt 'LYX_1A' 
+03F5: use_text_commands 0 
+jump @NOX2_4933 
+
+:NOX2_5124
+gosub @NOX2_4721 
+0343: display_text 80.0 250.0 gxt 'LYX_1B' 
+03F5: use_text_commands 0 
+jump @NOX2_4933 
+
+:NOX2_5157
+gosub @NOX2_4721 
+0343: display_text 80.0 250.0 gxt 'LYX_1C' 
+03F5: use_text_commands 0 
+jump @NOX2_4933 
+
+:NOX2_5190
+gosub @NOX2_4721 
+045F: display_text_with_number 80.0 220.0 gxt 'LYX_0' number 14@ 
+03F5: use_text_commands 0 
+gosub @NOX2_4721 
+gosub @NOX2_9099 
+03F5: use_text_commands 0 
+gosub @NOX2_5255 
+gosub @NOX2_5397 
+jump @NOX2_4933 
+
+:NOX2_5255
+   not 7@ == 1 
+jf @NOX2_5298 
+   not 7@ == 2 
+jf @NOX2_5331 
+   not 7@ == 3 
+jf @NOX2_5364 
+jump @NOX2_4933 
+
+:NOX2_5298
+gosub @NOX2_4721 
+0343: display_text 80.0 250.0 gxt 'LYX_2A' 
+03F5: use_text_commands 0 
+jump @NOX2_4933 
+
+:NOX2_5331
+gosub @NOX2_4721 
+0343: display_text 80.0 250.0 gxt 'LYX_2B' 
+03F5: use_text_commands 0 
+jump @NOX2_4933 
+
+:NOX2_5364
+gosub @NOX2_4721 
+0343: display_text 80.0 250.0 gxt 'LYX_2C' 
+03F5: use_text_commands 0 
+jump @NOX2_4933 
+
+:NOX2_5397
+get_touch_point_state 18@ = get_touch_point_state 4 mintime 0 
+get_touch_point_state 19@ = get_touch_point_state 6 mintime 0 
+if and
+  18@ == 0 
+  19@ == 0 
+jf @NOX2_4933 
+gosub @NOX2_4721 
+0343: display_text 80.0 265.0 gxt 'LYX_2D' 
+03F5: use_text_commands 0 
+gosub @NOX2_4721 
+045F: display_text_with_number 160.0 265.0 gxt 'LYX_2E' number 11@ 
+03F5: use_text_commands 0 
+gosub @NOX2_4721 
+045F: display_text_with_number 225.0 265.0 gxt 'LYX_2F' number 12@ 
+03F5: use_text_commands 0 
+jump @NOX2_4933 
+
+:NOX2_5518
+gosub @NOX2_4721 
+045F: display_text_with_number 80.0 220.0 gxt 'LYX_0' number 15@ 
+03F5: use_text_commands 0 
+gosub @NOX2_4721 
+gosub @NOX2_12022 
+03F5: use_text_commands 0 
+gosub @NOX2_4721 
+0343: display_text 80.0 250.0 gxt 'LYX_3A' 
+03F5: use_text_commands 0 
+jump @NOX2_4933 
+
+:NOX2_5595
+gosub @NOX2_4721 
+045F: display_text_with_number 80.0 220.0 gxt 'LYX_4C' number 8@ 
+03F5: use_text_commands 0 
+gosub @NOX2_5636 
+jump @NOX2_4933 
+
+:NOX2_5636
+   not 9@ == 1 
+jf @NOX2_5667 
+   not 9@ == 2 
+jf @NOX2_5700 
+jump @NOX2_4933 
+
+:NOX2_5667
+gosub @NOX2_4721 
+0343: display_text 80.0 235.0 gxt 'LYX_4B' 
+03F5: use_text_commands 0 
+jump @NOX2_4933 
+
+:NOX2_5700
+gosub @NOX2_4721 
+0343: display_text 80.0 235.0 gxt 'LYX_4A' 
+03F5: use_text_commands 0 
+jump @NOX2_4933 
+
+:NOX2_5733
+   not 13@ == 0 
+jf @NOX2_6891 
+   not 13@ == 1 
+jf @NOX2_6914 
+   not 13@ == 2 
+jf @NOX2_6937 
+   not 13@ == 3 
+jf @NOX2_6960 
+   not 13@ == 4 
+jf @NOX2_6983 
+   not 13@ == 5 
+jf @NOX2_7006 
+   not 13@ == 6 
+jf @NOX2_7029 
+   not 13@ == 7 
+jf @NOX2_7052 
+   not 13@ == 9 
+jf @NOX2_7075 
+   not 13@ == 10 
+jf @NOX2_7098 
+   not 13@ == 11 
+jf @NOX2_7121 
+   not 13@ == 12 
+jf @NOX2_7144 
+   not 13@ == 13 
+jf @NOX2_7167 
+   not 13@ == 14 
+jf @NOX2_7190 
+   not 13@ == 15 
+jf @NOX2_7213 
+   not 13@ == 16 
+jf @NOX2_7236 
+   not 13@ == 17 
+jf @NOX2_7259 
+   not 13@ == 18 
+jf @NOX2_7282 
+   not 13@ == 19 
+jf @NOX2_7305 
+   not 13@ == 20 
+jf @NOX2_7328 
+   not 13@ == 21 
+jf @NOX2_7351 
+   not 13@ == 22 
+jf @NOX2_7374 
+   not 13@ == 23 
+jf @NOX2_7397 
+   not 13@ == 24 
+jf @NOX2_7420 
+   not 13@ == 25 
+jf @NOX2_7443 
+   not 13@ == 26 
+jf @NOX2_7466 
+   not 13@ == 27 
+jf @NOX2_7489 
+   not 13@ == 28 
+jf @NOX2_7512 
+   not 13@ == 29 
+jf @NOX2_7535 
+   not 13@ == 30 
+jf @NOX2_7558 
+   not 13@ == 31 
+jf @NOX2_7581 
+   not 13@ == 32 
+jf @NOX2_7604 
+   not 13@ == 33 
+jf @NOX2_7627 
+   not 13@ == 34 
+jf @NOX2_7650 
+   not 13@ == 35 
+jf @NOX2_7673 
+   not 13@ == 36 
+jf @NOX2_7696 
+   not 13@ == 37 
+jf @NOX2_7719 
+   not 13@ == 38 
+jf @NOX2_7742 
+   not 13@ == 39 
+jf @NOX2_7765 
+   not 13@ == 40 
+jf @NOX2_7788 
+   not 13@ == 41 
+jf @NOX2_7811 
+   not 13@ == 42 
+jf @NOX2_7834 
+   not 13@ == 43 
+jf @NOX2_7857 
+   not 13@ == 44 
+jf @NOX2_7880 
+   not 13@ == 45 
+jf @NOX2_7903 
+   not 13@ == 46 
+jf @NOX2_7926 
+   not 13@ == 47 
+jf @NOX2_7949 
+   not 13@ == 48 
+jf @NOX2_7972 
+   not 13@ == 49 
+jf @NOX2_7995 
+   not 13@ == 50 
+jf @NOX2_8018 
+   not 13@ == 51 
+jf @NOX2_8041 
+   not 13@ == 52 
+jf @NOX2_8064 
+   not 13@ == 53 
+jf @NOX2_8087 
+   not 13@ == 54 
+jf @NOX2_8110 
+   not 13@ == 55 
+jf @NOX2_8133 
+   not 13@ == 56 
+jf @NOX2_8156 
+   not 13@ == 57 
+jf @NOX2_8179 
+   not 13@ == 58 
+jf @NOX2_8202 
+   not 13@ == 59 
+jf @NOX2_8225 
+   not 13@ == 60 
+jf @NOX2_8248 
+   not 13@ == 61 
+jf @NOX2_8271 
+   not 13@ == 62 
+jf @NOX2_8294 
+   not 13@ == 63 
+jf @NOX2_8317 
+   not 13@ == 64 
+jf @NOX2_8340 
+   not 13@ == 65 
+jf @NOX2_8363 
+   not 13@ == 66 
+jf @NOX2_8386 
+   not 13@ == 67 
+jf @NOX2_8409 
+   not 13@ == 68 
+jf @NOX2_8432 
+   not 13@ == 69 
+jf @NOX2_8455 
+   not 13@ == 70 
+jf @NOX2_8478 
+   not 13@ == 71 
+jf @NOX2_8501 
+   not 13@ == 72 
+jf @NOX2_8524 
+   not 13@ == 73 
+jf @NOX2_8547 
+   not 13@ == 74 
+jf @NOX2_8570 
+   not 13@ == 75 
+jf @NOX2_8593 
+   not 13@ == 76 
+jf @NOX2_8616 
+   not 13@ == 77 
+jf @NOX2_8639 
+   not 13@ == 78 
+jf @NOX2_8662 
+   not 13@ == 79 
+jf @NOX2_8685 
+   not 13@ == 80 
+jf @NOX2_8708 
+   not 13@ == 81 
+jf @NOX2_8731 
+   not 13@ == 82 
+jf @NOX2_8754 
+   not 13@ == 83 
+jf @NOX2_8777 
+   not 13@ == 84 
+jf @NOX2_8800 
+   not 13@ == 85 
+jf @NOX2_8823 
+   not 13@ == 86 
+jf @NOX2_8846 
+   not 13@ == 87 
+jf @NOX2_8869 
+   not 13@ == 88 
+jf @NOX2_8892 
+   not 13@ == 89 
+jf @NOX2_8915 
+   not 13@ == 90 
+jf @NOX2_8938 
+   not 13@ == 91 
+jf @NOX2_8961 
+   not 13@ == 92 
+jf @NOX2_8984 
+   not 13@ == 93 
+jf @NOX2_9007 
+   not 13@ == 94 
+jf @NOX2_9030 
+   not 13@ == 95 
+jf @NOX2_9053 
+   not 13@ == 96 
+jf @NOX2_9076 
+jump @NOX2_4933 
+
+:NOX2_6891
+0343: display_text 80.0 235.0 gxt 'WNA0' 
+jump @NOX2_4933 
+
+:NOX2_6914
+0343: display_text 80.0 235.0 gxt 'WNA1' 
+jump @NOX2_4933 
+
+:NOX2_6937
+0343: display_text 80.0 235.0 gxt 'WNA2' 
+jump @NOX2_4933 
+
+:NOX2_6960
+0343: display_text 80.0 235.0 gxt 'WNA3' 
+jump @NOX2_4933 
+
+:NOX2_6983
+0343: display_text 80.0 235.0 gxt 'WNA4' 
+jump @NOX2_4933 
+
+:NOX2_7006
+0343: display_text 80.0 235.0 gxt 'WNA5' 
+jump @NOX2_4933 
+
+:NOX2_7029
+0343: display_text 80.0 235.0 gxt 'WNA6' 
+jump @NOX2_4933 
+
+:NOX2_7052
+0343: display_text 80.0 235.0 gxt 'WNA7' 
+jump @NOX2_4933 
+
+:NOX2_7075
+0343: display_text 80.0 235.0 gxt 'WNA9' 
+jump @NOX2_4933 
+
+:NOX2_7098
+0343: display_text 80.0 235.0 gxt 'WNA10' 
+jump @NOX2_4933 
+
+:NOX2_7121
+0343: display_text 80.0 235.0 gxt 'WNA11' 
+jump @NOX2_4933 
+
+:NOX2_7144
+0343: display_text 80.0 235.0 gxt 'WNA12' 
+jump @NOX2_4933 
+
+:NOX2_7167
+0343: display_text 80.0 235.0 gxt 'WNA13' 
+jump @NOX2_4933 
+
+:NOX2_7190
+0343: display_text 80.0 235.0 gxt 'WNA14' 
+jump @NOX2_4933 
+
+:NOX2_7213
+0343: display_text 80.0 235.0 gxt 'WNA15' 
+jump @NOX2_4933 
+
+:NOX2_7236
+0343: display_text 80.0 235.0 gxt 'WNA16' 
+jump @NOX2_4933 
+
+:NOX2_7259
+0343: display_text 80.0 235.0 gxt 'WNA17' 
+jump @NOX2_4933 
+
+:NOX2_7282
+0343: display_text 80.0 235.0 gxt 'WNA18' 
+jump @NOX2_4933 
+
+:NOX2_7305
+0343: display_text 80.0 235.0 gxt 'WNA19' 
+jump @NOX2_4933 
+
+:NOX2_7328
+0343: display_text 80.0 235.0 gxt 'WNA20' 
+jump @NOX2_4933 
+
+:NOX2_7351
+0343: display_text 80.0 235.0 gxt 'WNA21' 
+jump @NOX2_4933 
+
+:NOX2_7374
+0343: display_text 80.0 235.0 gxt 'WNA22' 
+jump @NOX2_4933 
+
+:NOX2_7397
+0343: display_text 80.0 235.0 gxt 'WNA23' 
+jump @NOX2_4933 
+
+:NOX2_7420
+0343: display_text 80.0 235.0 gxt 'WNA24' 
+jump @NOX2_4933 
+
+:NOX2_7443
+0343: display_text 80.0 235.0 gxt 'WNA25' 
+jump @NOX2_4933 
+
+:NOX2_7466
+0343: display_text 80.0 235.0 gxt 'WNA26' 
+jump @NOX2_4933 
+
+:NOX2_7489
+0343: display_text 80.0 235.0 gxt 'WNA27' 
+jump @NOX2_4933 
+
+:NOX2_7512
+0343: display_text 80.0 235.0 gxt 'WNA28' 
+jump @NOX2_4933 
+
+:NOX2_7535
+0343: display_text 80.0 235.0 gxt 'WNA29' 
+jump @NOX2_4933 
+
+:NOX2_7558
+0343: display_text 80.0 235.0 gxt 'WNA30' 
+jump @NOX2_4933 
+
+:NOX2_7581
+0343: display_text 80.0 235.0 gxt 'WNA31' 
+jump @NOX2_4933 
+
+:NOX2_7604
+0343: display_text 80.0 235.0 gxt 'WNA32' 
+jump @NOX2_4933 
+
+:NOX2_7627
+0343: display_text 80.0 235.0 gxt 'WNA33' 
+jump @NOX2_4933 
+
+:NOX2_7650
+0343: display_text 80.0 235.0 gxt 'WNA34' 
+jump @NOX2_4933 
+
+:NOX2_7673
+0343: display_text 80.0 235.0 gxt 'WNA35' 
+jump @NOX2_4933 
+
+:NOX2_7696
+0343: display_text 80.0 235.0 gxt 'WNA36' 
+jump @NOX2_4933 
+
+:NOX2_7719
+0343: display_text 80.0 235.0 gxt 'WNA37' 
+jump @NOX2_4933 
+
+:NOX2_7742
+0343: display_text 80.0 235.0 gxt 'WNA38' 
+jump @NOX2_4933 
+
+:NOX2_7765
+0343: display_text 80.0 235.0 gxt 'WNA39' 
+jump @NOX2_4933 
+
+:NOX2_7788
+0343: display_text 80.0 235.0 gxt 'WNA40' 
+jump @NOX2_4933 
+
+:NOX2_7811
+0343: display_text 80.0 235.0 gxt 'WNA41' 
+jump @NOX2_4933 
+
+:NOX2_7834
+0343: display_text 80.0 235.0 gxt 'WNA42' 
+jump @NOX2_4933 
+
+:NOX2_7857
+0343: display_text 80.0 235.0 gxt 'WNA43' 
+jump @NOX2_4933 
+
+:NOX2_7880
+0343: display_text 80.0 235.0 gxt 'WNA44' 
+jump @NOX2_4933 
+
+:NOX2_7903
+0343: display_text 80.0 235.0 gxt 'WNA45' 
+jump @NOX2_4933 
+
+:NOX2_7926
+0343: display_text 80.0 235.0 gxt 'WNA46' 
+jump @NOX2_4933 
+
+:NOX2_7949
+0343: display_text 80.0 235.0 gxt 'WNA47' 
+jump @NOX2_4933 
+
+:NOX2_7972
+0343: display_text 80.0 235.0 gxt 'WNA48' 
+jump @NOX2_4933 
+
+:NOX2_7995
+0343: display_text 80.0 235.0 gxt 'WNA49' 
+jump @NOX2_4933 
+
+:NOX2_8018
+0343: display_text 80.0 235.0 gxt 'WNA50' 
+jump @NOX2_4933 
+
+:NOX2_8041
+0343: display_text 80.0 235.0 gxt 'WNA51' 
+jump @NOX2_4933 
+
+:NOX2_8064
+0343: display_text 80.0 235.0 gxt 'WNA52' 
+jump @NOX2_4933 
+
+:NOX2_8087
+0343: display_text 80.0 235.0 gxt 'WNA53' 
+jump @NOX2_4933 
+
+:NOX2_8110
+0343: display_text 80.0 235.0 gxt 'WNA54' 
+jump @NOX2_4933 
+
+:NOX2_8133
+0343: display_text 80.0 235.0 gxt 'WNA55' 
+jump @NOX2_4933 
+
+:NOX2_8156
+0343: display_text 80.0 235.0 gxt 'WNA56' 
+jump @NOX2_4933 
+
+:NOX2_8179
+0343: display_text 80.0 235.0 gxt 'WNA57' 
+jump @NOX2_4933 
+
+:NOX2_8202
+0343: display_text 80.0 235.0 gxt 'WNA58' 
+jump @NOX2_4933 
+
+:NOX2_8225
+0343: display_text 80.0 235.0 gxt 'WNA59' 
+jump @NOX2_4933 
+
+:NOX2_8248
+0343: display_text 80.0 235.0 gxt 'WNA60' 
+jump @NOX2_4933 
+
+:NOX2_8271
+0343: display_text 80.0 235.0 gxt 'WNA61' 
+jump @NOX2_4933 
+
+:NOX2_8294
+0343: display_text 80.0 235.0 gxt 'WNA62' 
+jump @NOX2_4933 
+
+:NOX2_8317
+0343: display_text 80.0 235.0 gxt 'WNA63' 
+jump @NOX2_4933 
+
+:NOX2_8340
+0343: display_text 80.0 235.0 gxt 'WNA64' 
+jump @NOX2_4933 
+
+:NOX2_8363
+0343: display_text 80.0 235.0 gxt 'WNA65' 
+jump @NOX2_4933 
+
+:NOX2_8386
+0343: display_text 80.0 235.0 gxt 'WNA66' 
+jump @NOX2_4933 
+
+:NOX2_8409
+0343: display_text 80.0 235.0 gxt 'WNA67' 
+jump @NOX2_4933 
+
+:NOX2_8432
+0343: display_text 80.0 235.0 gxt 'WNA68' 
+jump @NOX2_4933 
+
+:NOX2_8455
+0343: display_text 80.0 235.0 gxt 'WNA69' 
+jump @NOX2_4933 
+
+:NOX2_8478
+0343: display_text 80.0 235.0 gxt 'WNA70' 
+jump @NOX2_4933 
+
+:NOX2_8501
+0343: display_text 80.0 235.0 gxt 'WNA71' 
+jump @NOX2_4933 
+
+:NOX2_8524
+0343: display_text 80.0 235.0 gxt 'WNA72' 
+jump @NOX2_4933 
+
+:NOX2_8547
+0343: display_text 80.0 235.0 gxt 'WNA73' 
+jump @NOX2_4933 
+
+:NOX2_8570
+0343: display_text 80.0 235.0 gxt 'WNA74' 
+jump @NOX2_4933 
+
+:NOX2_8593
+0343: display_text 80.0 235.0 gxt 'WNA75' 
+jump @NOX2_4933 
+
+:NOX2_8616
+0343: display_text 80.0 235.0 gxt 'WNA76' 
+jump @NOX2_4933 
+
+:NOX2_8639
+0343: display_text 80.0 235.0 gxt 'WNA77' 
+jump @NOX2_4933 
+
+:NOX2_8662
+0343: display_text 80.0 235.0 gxt 'WNA78' 
+jump @NOX2_4933 
+
+:NOX2_8685
+0343: display_text 80.0 235.0 gxt 'WNA79' 
+jump @NOX2_4933 
+
+:NOX2_8708
+0343: display_text 80.0 235.0 gxt 'WNA80' 
+jump @NOX2_4933 
+
+:NOX2_8731
+0343: display_text 80.0 235.0 gxt 'WNA81' 
+jump @NOX2_4933 
+
+:NOX2_8754
+0343: display_text 80.0 235.0 gxt 'WNA82' 
+jump @NOX2_4933 
+
+:NOX2_8777
+0343: display_text 80.0 235.0 gxt 'WNA83' 
+jump @NOX2_4933 
+
+:NOX2_8800
+0343: display_text 80.0 235.0 gxt 'WNA84' 
+jump @NOX2_4933 
+
+:NOX2_8823
+0343: display_text 80.0 235.0 gxt 'WNA85' 
+jump @NOX2_4933 
+
+:NOX2_8846
+0343: display_text 80.0 235.0 gxt 'WNA86' 
+jump @NOX2_4933 
+
+:NOX2_8869
+0343: display_text 80.0 235.0 gxt 'WNA87' 
+jump @NOX2_4933 
+
+:NOX2_8892
+0343: display_text 80.0 235.0 gxt 'WNA88' 
+jump @NOX2_4933 
+
+:NOX2_8915
+0343: display_text 80.0 235.0 gxt 'WNA89' 
+jump @NOX2_4933 
+
+:NOX2_8938
+0343: display_text 80.0 235.0 gxt 'WNA90' 
+jump @NOX2_4933 
+
+:NOX2_8961
+0343: display_text 80.0 235.0 gxt 'WNA91' 
+jump @NOX2_4933 
+
+:NOX2_8984
+0343: display_text 80.0 235.0 gxt 'WNA92' 
+jump @NOX2_4933 
+
+:NOX2_9007
+0343: display_text 80.0 235.0 gxt 'WNA93' 
+jump @NOX2_4933 
+
+:NOX2_9030
+0343: display_text 80.0 235.0 gxt 'WNA94' 
+jump @NOX2_4933 
+
+:NOX2_9053
+0343: display_text 80.0 235.0 gxt 'WNA95' 
+jump @NOX2_4933 
+
+:NOX2_9076
+0343: display_text 80.0 235.0 gxt 'WNA96' 
+jump @NOX2_4933 
+
+:NOX2_9099
+   not 14@ == 130 
+jf @NOX2_10159 
+   not 14@ == 131 
+jf @NOX2_10182 
+   not 14@ == 132 
+jf @NOX2_10205 
+   not 14@ == 133 
+jf @NOX2_10228 
+   not 14@ == 134 
+jf @NOX2_10251 
+   not 14@ == 135 
+jf @NOX2_10274 
+   not 14@ == 136 
+jf @NOX2_10297 
+   not 14@ == 137 
+jf @NOX2_10320 
+   not 14@ == 138 
+jf @NOX2_10343 
+   not 14@ == 139 
+jf @NOX2_10366 
+   not 14@ == 140 
+jf @NOX2_10389 
+   not 14@ == 141 
+jf @NOX2_10412 
+   not 14@ == 142 
+jf @NOX2_10435 
+   not 14@ == 143 
+jf @NOX2_10458 
+   not 14@ == 144 
+jf @NOX2_10481 
+   not 14@ == 145 
+jf @NOX2_10504 
+   not 14@ == 146 
+jf @NOX2_10527 
+   not 14@ == 147 
+jf @NOX2_10550 
+   not 14@ == 148 
+jf @NOX2_10573 
+   not 14@ == 149 
+jf @NOX2_10596 
+   not 14@ == 150 
+jf @NOX2_10619 
+   not 14@ == 151 
+jf @NOX2_10642 
+   not 14@ == 152 
+jf @NOX2_10665 
+   not 14@ == 153 
+jf @NOX2_10688 
+   not 14@ == 154 
+jf @NOX2_10711 
+   not 14@ == 155 
+jf @NOX2_10734 
+   not 14@ == 156 
+jf @NOX2_10757 
+   not 14@ == 157 
+jf @NOX2_10780 
+   not 14@ == 158 
+jf @NOX2_10803 
+   not 14@ == 159 
+jf @NOX2_10826 
+   not 14@ == 160 
+jf @NOX2_10849 
+   not 14@ == 161 
+jf @NOX2_10872 
+   not 14@ == 162 
+jf @NOX2_10895 
+   not 14@ == 163 
+jf @NOX2_10918 
+   not 14@ == 164 
+jf @NOX2_10941 
+   not 14@ == 165 
+jf @NOX2_10964 
+   not 14@ == 166 
+jf @NOX2_10987 
+   not 14@ == 167 
+jf @NOX2_11010 
+   not 14@ == 168 
+jf @NOX2_11033 
+   not 14@ == 169 
+jf @NOX2_11056 
+   not 14@ == 170 
+jf @NOX2_11079 
+   not 14@ == 171 
+jf @NOX2_11102 
+   not 14@ == 172 
+jf @NOX2_11125 
+   not 14@ == 173 
+jf @NOX2_11148 
+   not 14@ == 174 
+jf @NOX2_11171 
+   not 14@ == 175 
+jf @NOX2_11194 
+   not 14@ == 176 
+jf @NOX2_11217 
+   not 14@ == 177 
+jf @NOX2_11240 
+   not 14@ == 178 
+jf @NOX2_11263 
+   not 14@ == 179 
+jf @NOX2_11286 
+   not 14@ == 180 
+jf @NOX2_11309 
+   not 14@ == 181 
+jf @NOX2_11332 
+   not 14@ == 182 
+jf @NOX2_11355 
+   not 14@ == 183 
+jf @NOX2_11378 
+   not 14@ == 184 
+jf @NOX2_11401 
+   not 14@ == 185 
+jf @NOX2_11424 
+   not 14@ == 186 
+jf @NOX2_11447 
+   not 14@ == 187 
+jf @NOX2_11470 
+   not 14@ == 188 
+jf @NOX2_11493 
+   not 14@ == 189 
+jf @NOX2_11516 
+   not 14@ == 190 
+jf @NOX2_11539 
+   not 14@ == 191 
+jf @NOX2_11562 
+   not 14@ == 193 
+jf @NOX2_11585 
+   not 14@ == 194 
+jf @NOX2_11608 
+   not 14@ == 195 
+jf @NOX2_11631 
+   not 14@ == 196 
+jf @NOX2_11654 
+   not 14@ == 202 
+jf @NOX2_11677 
+   not 14@ == 203 
+jf @NOX2_11700 
+   not 14@ == 204 
+jf @NOX2_11723 
+   not 14@ == 205 
+jf @NOX2_11746 
+   not 14@ == 206 
+jf @NOX2_11769 
+   not 14@ == 207 
+jf @NOX2_11792 
+   not 14@ == 208 
+jf @NOX2_11815 
+   not 14@ == 209 
+jf @NOX2_11838 
+   not 14@ == 210 
+jf @NOX2_11861 
+   not 14@ == 211 
+jf @NOX2_11884 
+   not 14@ == 212 
+jf @NOX2_11907 
+   not 14@ == 213 
+jf @NOX2_11930 
+   not 14@ == 214 
+jf @NOX2_11953 
+   not 14@ == 215 
+jf @NOX2_11976 
+   not 14@ == 216 
+jf @NOX2_11999 
+jump @NOX2_4933 
+
+:NOX2_10159
+0343: display_text 80.0 235.0 gxt 'WNB130' 
+jump @NOX2_4933 
+
+:NOX2_10182
+0343: display_text 80.0 235.0 gxt 'WNB131' 
+jump @NOX2_4933 
+
+:NOX2_10205
+0343: display_text 80.0 235.0 gxt 'WNB132' 
+jump @NOX2_4933 
+
+:NOX2_10228
+0343: display_text 80.0 235.0 gxt 'WNB133' 
+jump @NOX2_4933 
+
+:NOX2_10251
+0343: display_text 80.0 235.0 gxt 'WNB134' 
+jump @NOX2_4933 
+
+:NOX2_10274
+0343: display_text 80.0 235.0 gxt 'WNB135' 
+jump @NOX2_4933 
+
+:NOX2_10297
+0343: display_text 80.0 235.0 gxt 'WNB136' 
+jump @NOX2_4933 
+
+:NOX2_10320
+0343: display_text 80.0 235.0 gxt 'WNB137' 
+jump @NOX2_4933 
+
+:NOX2_10343
+0343: display_text 80.0 235.0 gxt 'WNB138' 
+jump @NOX2_4933 
+
+:NOX2_10366
+0343: display_text 80.0 235.0 gxt 'WNB139' 
+jump @NOX2_4933 
+
+:NOX2_10389
+0343: display_text 80.0 235.0 gxt 'WNB140' 
+jump @NOX2_4933 
+
+:NOX2_10412
+0343: display_text 80.0 235.0 gxt 'WNB141' 
+jump @NOX2_4933 
+
+:NOX2_10435
+0343: display_text 80.0 235.0 gxt 'WNB142' 
+jump @NOX2_4933 
+
+:NOX2_10458
+0343: display_text 80.0 235.0 gxt 'WNB143' 
+jump @NOX2_4933 
+
+:NOX2_10481
+0343: display_text 80.0 235.0 gxt 'WNB144' 
+jump @NOX2_4933 
+
+:NOX2_10504
+0343: display_text 80.0 235.0 gxt 'WNB145' 
+jump @NOX2_4933 
+
+:NOX2_10527
+0343: display_text 80.0 235.0 gxt 'WNB146' 
+jump @NOX2_4933 
+
+:NOX2_10550
+0343: display_text 80.0 235.0 gxt 'WNB147' 
+jump @NOX2_4933 
+
+:NOX2_10573
+0343: display_text 80.0 235.0 gxt 'WNB148' 
+jump @NOX2_4933 
+
+:NOX2_10596
+0343: display_text 80.0 235.0 gxt 'WNB149' 
+jump @NOX2_4933 
+
+:NOX2_10619
+0343: display_text 80.0 235.0 gxt 'WNB150' 
+jump @NOX2_4933 
+
+:NOX2_10642
+0343: display_text 80.0 235.0 gxt 'WNB151' 
+jump @NOX2_4933 
+
+:NOX2_10665
+0343: display_text 80.0 235.0 gxt 'WNB152' 
+jump @NOX2_4933 
+
+:NOX2_10688
+0343: display_text 80.0 235.0 gxt 'WNB153' 
+jump @NOX2_4933 
+
+:NOX2_10711
+0343: display_text 80.0 235.0 gxt 'WNB154' 
+jump @NOX2_4933 
+
+:NOX2_10734
+0343: display_text 80.0 235.0 gxt 'WNB155' 
+jump @NOX2_4933 
+
+:NOX2_10757
+0343: display_text 80.0 235.0 gxt 'WNB156' 
+jump @NOX2_4933 
+
+:NOX2_10780
+0343: display_text 80.0 235.0 gxt 'WNB157' 
+jump @NOX2_4933 
+
+:NOX2_10803
+0343: display_text 80.0 235.0 gxt 'WNB158' 
+jump @NOX2_4933 
+
+:NOX2_10826
+0343: display_text 80.0 235.0 gxt 'WNB159' 
+jump @NOX2_4933 
+
+:NOX2_10849
+0343: display_text 80.0 235.0 gxt 'WNB160' 
+jump @NOX2_4933 
+
+:NOX2_10872
+0343: display_text 80.0 235.0 gxt 'WNB161' 
+jump @NOX2_4933 
+
+:NOX2_10895
+0343: display_text 80.0 235.0 gxt 'WNB162' 
+jump @NOX2_4933 
+
+:NOX2_10918
+0343: display_text 80.0 235.0 gxt 'WNB163' 
+jump @NOX2_4933 
+
+:NOX2_10941
+0343: display_text 80.0 235.0 gxt 'WNB164' 
+jump @NOX2_4933 
+
+:NOX2_10964
+0343: display_text 80.0 235.0 gxt 'WNB165' 
+jump @NOX2_4933 
+
+:NOX2_10987
+0343: display_text 80.0 235.0 gxt 'WNB166' 
+jump @NOX2_4933 
+
+:NOX2_11010
+0343: display_text 80.0 235.0 gxt 'WNB167' 
+jump @NOX2_4933 
+
+:NOX2_11033
+0343: display_text 80.0 235.0 gxt 'WNB168' 
+jump @NOX2_4933 
+
+:NOX2_11056
+0343: display_text 80.0 235.0 gxt 'WNB169' 
+jump @NOX2_4933 
+
+:NOX2_11079
+0343: display_text 80.0 235.0 gxt 'WNB170' 
+jump @NOX2_4933 
+
+:NOX2_11102
+0343: display_text 80.0 235.0 gxt 'WNB171' 
+jump @NOX2_4933 
+
+:NOX2_11125
+0343: display_text 80.0 235.0 gxt 'WNB172' 
+jump @NOX2_4933 
+
+:NOX2_11148
+0343: display_text 80.0 235.0 gxt 'WNB173' 
+jump @NOX2_4933 
+
+:NOX2_11171
+0343: display_text 80.0 235.0 gxt 'WNB174' 
+jump @NOX2_4933 
+
+:NOX2_11194
+0343: display_text 80.0 235.0 gxt 'WNB175' 
+jump @NOX2_4933 
+
+:NOX2_11217
+0343: display_text 80.0 235.0 gxt 'WNB176' 
+jump @NOX2_4933 
+
+:NOX2_11240
+0343: display_text 80.0 235.0 gxt 'WNB177' 
+jump @NOX2_4933 
+
+:NOX2_11263
+0343: display_text 80.0 235.0 gxt 'WNB178' 
+jump @NOX2_4933 
+
+:NOX2_11286
+0343: display_text 80.0 235.0 gxt 'WNB179' 
+jump @NOX2_4933 
+
+:NOX2_11309
+0343: display_text 80.0 235.0 gxt 'WNB180' 
+jump @NOX2_4933 
+
+:NOX2_11332
+0343: display_text 80.0 235.0 gxt 'WNB181' 
+jump @NOX2_4933 
+
+:NOX2_11355
+0343: display_text 80.0 235.0 gxt 'WNB182' 
+jump @NOX2_4933 
+
+:NOX2_11378
+0343: display_text 80.0 235.0 gxt 'WNB183' 
+jump @NOX2_4933 
+
+:NOX2_11401
+0343: display_text 80.0 235.0 gxt 'WNB184' 
+jump @NOX2_4933 
+
+:NOX2_11424
+0343: display_text 80.0 235.0 gxt 'WNB185' 
+jump @NOX2_4933 
+
+:NOX2_11447
+0343: display_text 80.0 235.0 gxt 'WNB186' 
+jump @NOX2_4933 
+
+:NOX2_11470
+0343: display_text 80.0 235.0 gxt 'WNB187' 
+jump @NOX2_4933 
+
+:NOX2_11493
+0343: display_text 80.0 235.0 gxt 'WNB188' 
+jump @NOX2_4933 
+
+:NOX2_11516
+0343: display_text 80.0 235.0 gxt 'WNB189' 
+jump @NOX2_4933 
+
+:NOX2_11539
+0343: display_text 80.0 235.0 gxt 'WNB190' 
+jump @NOX2_4933 
+
+:NOX2_11562
+0343: display_text 80.0 235.0 gxt 'WNB191' 
+jump @NOX2_4933 
+
+:NOX2_11585
+0343: display_text 80.0 235.0 gxt 'WNB193' 
+jump @NOX2_4933 
+
+:NOX2_11608
+0343: display_text 80.0 235.0 gxt 'WNB194' 
+jump @NOX2_4933 
+
+:NOX2_11631
+0343: display_text 80.0 235.0 gxt 'WNB195' 
+jump @NOX2_4933 
+
+:NOX2_11654
+0343: display_text 80.0 235.0 gxt 'WNB196' 
+jump @NOX2_4933 
+
+:NOX2_11677
+0343: display_text 80.0 235.0 gxt 'WNB202' 
+jump @NOX2_4933 
+
+:NOX2_11700
+0343: display_text 80.0 235.0 gxt 'WNB203' 
+jump @NOX2_4933 
+
+:NOX2_11723
+0343: display_text 80.0 235.0 gxt 'WNB204' 
+jump @NOX2_4933 
+
+:NOX2_11746
+0343: display_text 80.0 235.0 gxt 'WNB205' 
+jump @NOX2_4933 
+
+:NOX2_11769
+0343: display_text 80.0 235.0 gxt 'WNB206' 
+jump @NOX2_4933 
+
+:NOX2_11792
+0343: display_text 80.0 235.0 gxt 'WNB207' 
+jump @NOX2_4933 
+
+:NOX2_11815
+0343: display_text 80.0 235.0 gxt 'WNB208' 
+jump @NOX2_4933 
+
+:NOX2_11838
+0343: display_text 80.0 235.0 gxt 'WNB209' 
+jump @NOX2_4933 
+
+:NOX2_11861
+0343: display_text 80.0 235.0 gxt 'WNB210' 
+jump @NOX2_4933 
+
+:NOX2_11884
+0343: display_text 80.0 235.0 gxt 'WNB211' 
+jump @NOX2_4933 
+
+:NOX2_11907
+0343: display_text 80.0 235.0 gxt 'WNB212' 
+jump @NOX2_4933 
+
+:NOX2_11930
+0343: display_text 80.0 235.0 gxt 'WNB213' 
+jump @NOX2_4933 
+
+:NOX2_11953
+0343: display_text 80.0 235.0 gxt 'WNB214' 
+jump @NOX2_4933 
+
+:NOX2_11976
+0343: display_text 80.0 235.0 gxt 'WNB215' 
+jump @NOX2_4933 
+
+:NOX2_11999
+0343: display_text 80.0 235.0 gxt 'WNB216' 
+jump @NOX2_4933 
+
+:NOX2_12022
+   not 15@ == 259 
+jf @NOX2_12458 
+   not 15@ == 260 
+jf @NOX2_12481 
+   not 15@ == 261 
+jf @NOX2_12504 
+   not 15@ == 262 
+jf @NOX2_12527 
+   not 15@ == 263 
+jf @NOX2_12550 
+   not 15@ == 264 
+jf @NOX2_12573 
+   not 15@ == 265 
+jf @NOX2_12596 
+   not 15@ == 266 
+jf @NOX2_12619 
+   not 15@ == 267 
+jf @NOX2_12642 
+   not 15@ == 268 
+jf @NOX2_12665 
+   not 15@ == 269 
+jf @NOX2_12688 
+   not 15@ == 270 
+jf @NOX2_12711 
+   not 15@ == 271 
+jf @NOX2_12734 
+   not 15@ == 272 
+jf @NOX2_12757 
+   not 15@ == 274 
+jf @NOX2_12780 
+   not 15@ == 275 
+jf @NOX2_12803 
+   not 15@ == 276 
+jf @NOX2_12826 
+   not 15@ == 277 
+jf @NOX2_12849 
+   not 15@ == 278 
+jf @NOX2_12872 
+   not 15@ == 279 
+jf @NOX2_12895 
+   not 15@ == 280 
+jf @NOX2_12918 
+   not 15@ == 281 
+jf @NOX2_12941 
+   not 15@ == 282 
+jf @NOX2_12964 
+   not 15@ == 283 
+jf @NOX2_12987 
+   not 15@ == 284 
+jf @NOX2_13010 
+   not 15@ == 285 
+jf @NOX2_13033 
+   not 15@ == 286 
+jf @NOX2_13056 
+   not 15@ == 287 
+jf @NOX2_13079 
+   not 15@ == 288 
+jf @NOX2_13102 
+   not 15@ == 289 
+jf @NOX2_13125 
+   not 15@ == 290 
+jf @NOX2_13148 
+   not 15@ == 291 
+jf @NOX2_13171 
+   not 15@ == 292 
+jf @NOX2_13194 
+jump @NOX2_4933 
+
+:NOX2_12458
+0343: display_text 80.0 235.0 gxt 'WN259' 
+jump @NOX2_4933 
+
+:NOX2_12481
+0343: display_text 80.0 235.0 gxt 'WN260' 
+jump @NOX2_4933 
+
+:NOX2_12504
+0343: display_text 80.0 235.0 gxt 'WN261' 
+jump @NOX2_4933 
+
+:NOX2_12527
+0343: display_text 80.0 235.0 gxt 'WN262' 
+jump @NOX2_4933 
+
+:NOX2_12550
+0343: display_text 80.0 235.0 gxt 'WN263' 
+jump @NOX2_4933 
+
+:NOX2_12573
+0343: display_text 80.0 235.0 gxt 'WN264' 
+jump @NOX2_4933 
+
+:NOX2_12596
+0343: display_text 80.0 235.0 gxt 'WN265' 
+jump @NOX2_4933 
+
+:NOX2_12619
+0343: display_text 80.0 235.0 gxt 'WN266' 
+jump @NOX2_4933 
+
+:NOX2_12642
+0343: display_text 80.0 235.0 gxt 'WN267' 
+jump @NOX2_4933 
+
+:NOX2_12665
+0343: display_text 80.0 235.0 gxt 'WN268' 
+jump @NOX2_4933 
+
+:NOX2_12688
+0343: display_text 80.0 235.0 gxt 'WN269' 
+jump @NOX2_4933 
+
+:NOX2_12711
+0343: display_text 80.0 235.0 gxt 'WN270' 
+jump @NOX2_4933 
+
+:NOX2_12734
+0343: display_text 80.0 235.0 gxt 'WN271' 
+jump @NOX2_4933 
+
+:NOX2_12757
+0343: display_text 80.0 235.0 gxt 'WN272' 
+jump @NOX2_4933 
+
+:NOX2_12780
+0343: display_text 80.0 235.0 gxt 'WN274' 
+jump @NOX2_4933 
+
+:NOX2_12803
+0343: display_text 80.0 235.0 gxt 'WN275' 
+jump @NOX2_4933 
+
+:NOX2_12826
+0343: display_text 80.0 235.0 gxt 'WN276' 
+jump @NOX2_4933 
+
+:NOX2_12849
+0343: display_text 80.0 235.0 gxt 'WN277' 
+jump @NOX2_4933 
+
+:NOX2_12872
+0343: display_text 80.0 235.0 gxt 'WN278' 
+jump @NOX2_4933 
+
+:NOX2_12895
+0343: display_text 80.0 235.0 gxt 'WN279' 
+jump @NOX2_4933 
+
+:NOX2_12918
+0343: display_text 80.0 235.0 gxt 'WN280' 
+jump @NOX2_4933 
+
+:NOX2_12941
+0343: display_text 80.0 235.0 gxt 'WN281' 
+jump @NOX2_4933 
+
+:NOX2_12964
+0343: display_text 80.0 235.0 gxt 'WN282' 
+jump @NOX2_4933 
+
+:NOX2_12987
+0343: display_text 80.0 235.0 gxt 'WN283' 
+jump @NOX2_4933 
+
+:NOX2_13010
+0343: display_text 80.0 235.0 gxt 'WN284' 
+jump @NOX2_4933 
+
+:NOX2_13033
+0343: display_text 80.0 235.0 gxt 'WN285' 
+jump @NOX2_4933 
+
+:NOX2_13056
+0343: display_text 80.0 235.0 gxt 'WN286' 
+jump @NOX2_4933 
+
+:NOX2_13079
+0343: display_text 80.0 235.0 gxt 'WN287' 
+jump @NOX2_4933 
+
+:NOX2_13102
+0343: display_text 80.0 235.0 gxt 'WN288' 
+jump @NOX2_4933 
+
+:NOX2_13125
+0343: display_text 80.0 235.0 gxt 'WN289' 
+jump @NOX2_4933 
+
+:NOX2_13148
+0343: display_text 80.0 235.0 gxt 'WN290' 
+jump @NOX2_4933 
+
+:NOX2_13171
+0343: display_text 80.0 235.0 gxt 'WN291' 
+jump @NOX2_4933 
+
+:NOX2_13194
+0343: display_text 80.0 235.0 gxt 'WN292' 
+jump @NOX2_4933 
+
+:NOX2_13217
+   not 15@ == 259 
+jf @NOX2_13653 
+   not 15@ == 260 
+jf @NOX2_13665 
+   not 15@ == 261 
+jf @NOX2_13677 
+   not 15@ == 262 
+jf @NOX2_13689 
+   not 15@ == 263 
+jf @NOX2_13701 
+   not 15@ == 264 
+jf @NOX2_13713 
+   not 15@ == 265 
+jf @NOX2_13725 
+   not 15@ == 266 
+jf @NOX2_13737 
+   not 15@ == 267 
+jf @NOX2_13749 
+   not 15@ == 268 
+jf @NOX2_13761 
+   not 15@ == 269 
+jf @NOX2_13773 
+   not 15@ == 270 
+jf @NOX2_13785 
+   not 15@ == 271 
+jf @NOX2_13797 
+   not 15@ == 272 
+jf @NOX2_13809 
+   not 15@ == 274 
+jf @NOX2_13821 
+   not 15@ == 275 
+jf @NOX2_13833 
+   not 15@ == 276 
+jf @NOX2_13845 
+   not 15@ == 277 
+jf @NOX2_13857 
+   not 15@ == 278 
+jf @NOX2_13869 
+   not 15@ == 279 
+jf @NOX2_13881 
+   not 15@ == 280 
+jf @NOX2_13893 
+   not 15@ == 281 
+jf @NOX2_13905 
+   not 15@ == 282 
+jf @NOX2_13917 
+   not 15@ == 283 
+jf @NOX2_13929 
+   not 15@ == 284 
+jf @NOX2_13941 
+   not 15@ == 285 
+jf @NOX2_13953 
+   not 15@ == 286 
+jf @NOX2_13965 
+   not 15@ == 287 
+jf @NOX2_13977 
+   not 15@ == 288 
+jf @NOX2_13989 
+   not 15@ == 289 
+jf @NOX2_14001 
+   not 15@ == 290 
+jf @NOX2_14013 
+   not 15@ == 291 
+jf @NOX2_14025 
+   not 15@ == 292 
+jf @NOX2_14037 
+jump @NOX2_4933 
+
+:NOX2_13653
+1@ = 1 
+jump @NOX2_4933 
+
+:NOX2_13665
+1@ = 2 
+jump @NOX2_4933 
+
+:NOX2_13677
+1@ = 3 
+jump @NOX2_4933 
+
+:NOX2_13689
+1@ = 4 
+jump @NOX2_4933 
+
+:NOX2_13701
+1@ = 5 
+jump @NOX2_4933 
+
+:NOX2_13713
+1@ = 6 
+jump @NOX2_4933 
+
+:NOX2_13725
+1@ = 7 
+jump @NOX2_4933 
+
+:NOX2_13737
+1@ = 8 
+jump @NOX2_4933 
+
+:NOX2_13749
+1@ = 9 
+jump @NOX2_4933 
+
+:NOX2_13761
+1@ = 10 
+jump @NOX2_4933 
+
+:NOX2_13773
+1@ = 11 
+jump @NOX2_4933 
+
+:NOX2_13785
+1@ = 12 
+jump @NOX2_4933 
+
+:NOX2_13797
+1@ = 14 
+jump @NOX2_4933 
+
+:NOX2_13809
+1@ = 15 
+jump @NOX2_4933 
+
+:NOX2_13821
+1@ = 17 
+jump @NOX2_4933 
+
+:NOX2_13833
+1@ = 18 
+jump @NOX2_4933 
+
+:NOX2_13845
+1@ = 27 
+jump @NOX2_4933 
+
+:NOX2_13857
+1@ = 19 
+jump @NOX2_4933 
+
+:NOX2_13869
+1@ = 20 
+jump @NOX2_4933 
+
+:NOX2_13881
+1@ = 21 
+jump @NOX2_4933 
+
+:NOX2_13893
+1@ = 26 
+jump @NOX2_4933 
+
+:NOX2_13905
+1@ = 22 
+jump @NOX2_4933 
+
+:NOX2_13917
+1@ = 23 
+jump @NOX2_4933 
+
+:NOX2_13929
+1@ = 24 
+jump @NOX2_4933 
+
+:NOX2_13941
+1@ = 25 
+jump @NOX2_4933 
+
+:NOX2_13953
+1@ = 28 
+jump @NOX2_4933 
+
+:NOX2_13965
+1@ = 29 
+jump @NOX2_4933 
+
+:NOX2_13977
+1@ = 30 
+jump @NOX2_4933 
+
+:NOX2_13989
+1@ = 31 
+jump @NOX2_4933 
+
+:NOX2_14001
+1@ = 32 
+jump @NOX2_4933 
+
+:NOX2_14013
+1@ = 33 
+jump @NOX2_4933 
+
+:NOX2_14025
+1@ = 13 
+jump @NOX2_4933 
+
+:NOX2_14037
+1@ = 36 
+jump @NOX2_4933 
+
+:NOX2_14049
+context_set_reg_value 0 value $541 
+context_call_func 10@ 
+context_get_reg_value 2@ = context_get_reg 0 
+2@ += 1224 
+write_mem_addr 2@ value 888.0 size 4 add_ib 0 protect 1 
+2@ += 4 
+write_mem_addr 2@ value 888.0 size 4 add_ib 0 protect 1 
+02B0: set_char_proofs $541 BP 1 FP 1 EP 1 CP 1 MP 1 
+  9@ == 2 
+jf @NOX2_14134 
+01F5: set_max_wanted_level 8@ 
+0112: alter_wanted_level 0 to 8@ 
+jump @NOX2_4933 
+
+:NOX2_14134
+01F5: set_max_wanted_level 6 
+jump @NOX2_4933 
+
+:NOX2_14145
+hex
+ "_ZN6CPools6GetPedEi" 00
+end
+
+:NOX2_14165
+hex
+ "_ZN7CEntity15DeleteRslObjectEv" 00
+end
+
+:NOX2_14196
+hex
+ "_ZN4CPed13SetModelIndexEj" 00
+end
